@@ -2,5 +2,14 @@
     <qresource prefix="/">
         <file>qml/config.json</file>
         <file>qml/Main.qml</file>
+        <file>qml/controls/FelgoNavigationStack.qml</file>
+        <file>qml/pages/SplashScreen.qml</file>
+        <file>qml/singletons/AppUtil.qml</file>
+        <file>qml/controls/FelgoPage.qml</file>
+        <file>qml/singletons/SVG.qml</file>
+        <file>assets/images/wallpapers/bike.jpg</file>
+        <file>assets/images/logos/bike-hub-transparent.png</file>
+        <file>assets/images/logos/bike-hub-medium-icon.png</file>
+        <file>assets/fonts/Nunito-Regular.ttf</file>
     </qresource>
 </RCC>

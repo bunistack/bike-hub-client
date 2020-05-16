@@ -14,6 +14,10 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     felgo.initialize(&engine);
 
+    //register singletons
+    qmlRegisterSingletonType(QUrl("qrc:/qml/singletons/AppUtil.qml"), "AppUtil",1,0,"AppUtil");
+    qmlRegisterSingletonType(QUrl("qrc:/qml/singletons/SVG.qml"), "SVG",1,0,"SVG");
+
     felgo.setMainQmlFileName(QStringLiteral("qrc:/qml/Main.qml"));
 
     engine.load(QUrl(felgo.mainQmlFileName()));
