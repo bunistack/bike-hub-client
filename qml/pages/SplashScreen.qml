@@ -13,7 +13,7 @@ FelgoPage {
         running: true
         interval: 2000
         onTriggered: {
-
+            mainNavigationStack.clearAndPush(Qt.resolvedUrl("NavigationPage.qml"));
         }
     }
 

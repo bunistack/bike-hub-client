@@ -11,5 +11,10 @@
         <file>assets/images/logos/bike-hub-transparent.png</file>
         <file>assets/images/logos/bike-hub-medium-icon.png</file>
         <file>assets/fonts/Nunito-Regular.ttf</file>
+        <file>qml/pages/NavigationPage.qml</file>
+        <file>qml/models/NavigationDrawerListModel.qml</file>
+        <file>qml/components/NavigationDrawer.qml</file>
+        <file>assets/images/illustrations/profile_picture.svg</file>
+        <file>assets/images/illustrations/biking.svg</file>
     </qresource>
 </RCC>
