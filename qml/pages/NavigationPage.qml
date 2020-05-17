@@ -29,23 +29,15 @@ FelgoPage {
     }
 
     //StackView for the different drawer options
-//    CustomStackView {
-//        id: navigationStackView
-//        anchors.fill: parent
-//        anchors.leftMargin: isPortrait || Theme.isAndroid ? 0 : navigationDrawer.width
+    CustomStackView {
+        id: navigationStackView
+        anchors.fill: parent
+        anchors.leftMargin: isPortrait || Theme.isAndroid ? 0 : navigationDrawer.width
 
-//        Component.onCompleted: {
-//            push(Qt.resolvedUrl("./Dashboard.qml"));
-//        }
-//    }
-
-//    ImageMessageDialog{
-//        id: messageDialog
-//    }
-
-//    function returnToLogin(){
-//        root.navigationStack.clearAndPush(Qt.resolvedUrl("Login.qml"));
-//    }
+        Component.onCompleted: {
+            push(Qt.resolvedUrl("./Home.qml"));
+        }
+    }
 
     //end of root
 }

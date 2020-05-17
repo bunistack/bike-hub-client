@@ -16,5 +16,12 @@
         <file>qml/components/NavigationDrawer.qml</file>
         <file>assets/images/illustrations/profile_picture.svg</file>
         <file>assets/images/illustrations/biking.svg</file>
+        <file>qml/pages/Home.qml</file>
+        <file>qml/controls/CustomStackView.qml</file>
+        <file>qml/pages/HomeView.qml</file>
+        <file>qml/controls/CustomPage.qml</file>
+        <file>qml/controls/ShadowedRectangle.qml</file>
+        <file>qml/controls/CustomMenu.qml</file>
+        <file>assets/images/icons/hamburger_menu_grey.png</file>
     </qresource>
 </RCC>
