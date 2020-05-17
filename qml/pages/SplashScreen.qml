@@ -25,7 +25,6 @@ FelgoPage {
 
     Rectangle{
         anchors.fill: parent
-        //color: "#486A99"
         opacity: 0.75
         gradient: Gradient {
             GradientStop { position: 0.0; color: "#486A99" }
@@ -37,11 +36,11 @@ FelgoPage {
         width: parent.width
         height: childrenRect.height
         anchors.centerIn: parent
-        spacing: 10
+        spacing: 15
 
         Image {
-            source: "qrc:/assets/images/logos/bike-hub-transparent.png"
-            width: 300
+            source: "qrc:/assets/images/logos/bike-hub-medium-icon.png"
+            width: 200
             height: (sourceSize.height/sourceSize.width) * width
             anchors.horizontalCenter: parent.horizontalCenter
         }
@@ -68,6 +67,25 @@ FelgoPage {
             font.weight: Font.ExtraBold
             color: "white"
             horizontalAlignment: Text.AlignHCenter
+        }
+
+        Row{
+            width: childrenRect.width
+            anchors.horizontalCenter: parent.horizontalCenter
+            spacing: 30
+            height: 25
+
+            Icon{
+                size: parent.height
+                icon: IconType.facebookf
+                color: "#39C4EB"
+            }
+
+            Icon{
+                size: parent.height
+                icon: IconType.twitter
+                color: "#39C4EB"
+            }
         }
 
     }
