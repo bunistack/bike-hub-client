@@ -23,5 +23,16 @@
         <file>qml/controls/ShadowedRectangle.qml</file>
         <file>qml/controls/CustomMenu.qml</file>
         <file>assets/images/icons/hamburger_menu_grey.png</file>
+        <file>qml/components/HomeScrollView.qml</file>
+        <file>qml/components/HomeSidePanel.qml</file>
+        <file>qml/controls/IconButton.qml</file>
+        <file>assets/images/icons/arrow_grey.png</file>
+        <file>qml/controls/ListItemStyle1.qml</file>
+        <file>qml/controls/ListItemStyle2.qml</file>
+        <file>assets/images/icons/pastel/news_pastel.png</file>
+        <file>assets/images/icons/pastel/orders_pastel.png</file>
+        <file>assets/images/icons/pastel/store_pastel.png</file>
+        <file>assets/images/icons/pastel/medium/birthday_cake_pastel.png</file>
+        <file>assets/images/icons/pastel/medium/calendar_pastel.png</file>
     </qresource>
 </RCC>
