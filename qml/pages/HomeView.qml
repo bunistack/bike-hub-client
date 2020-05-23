@@ -68,6 +68,7 @@ CustomPage {
                 id: sidePanel
                 panelWidth: 300
                 height: parent.height
+                z: 5
             }
 
             HomeScrollView{

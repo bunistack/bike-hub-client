@@ -34,5 +34,8 @@
         <file>assets/images/icons/pastel/store_pastel.png</file>
         <file>assets/images/icons/pastel/medium/birthday_cake_pastel.png</file>
         <file>assets/images/icons/pastel/medium/calendar_pastel.png</file>
+        <file>qml/components/HomeItemCard.qml</file>
+        <file>qml/models/HomeItemsModel.qml</file>
+        <file>assets/images/icons/pastel/about_pastel.png</file>
     </qresource>
 </RCC>

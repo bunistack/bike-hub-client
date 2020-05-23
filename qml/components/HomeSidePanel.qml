@@ -34,6 +34,7 @@ Rectangle {
         color: "#f0f0f0"
         anchors.right: parent.right
 
+        //width control
         IconButton{
             width: 40
             height: 40
@@ -55,7 +56,6 @@ Rectangle {
             }
         }
 
-        //width control
     }
 
 
