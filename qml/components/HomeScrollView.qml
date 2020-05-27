@@ -4,8 +4,6 @@ import QtQuick.Controls 2.12
 import "../models"
 
 ScrollView{
-    width: parent.width
-    height: parent.height - header.height
     contentWidth: -1
     clip: true
 

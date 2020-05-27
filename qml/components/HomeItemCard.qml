@@ -33,13 +33,11 @@ ShadowedRectangle {
                 id: image
                 width: 60
                 height: 60
-                anchors.horizontalCenter: parent.horizontalCenter
-                source: iconSource
+                anchors.horizontalCenter: parent.horizontalCenter                
             }
 
             Text {
-                id: text
-                text: itemText
+                id: text                
                 width: parent.width
                 height: 30
                 horizontalAlignment: Text.AlignHCenter
