@@ -27,7 +27,6 @@ Button{
         shadowColor: control.down ? shadowColorDown : shadowColorUp
 
         contentItem: Rectangle{
-            id: shadowedRect
             anchors.fill: parent
             color: backgroundColor
             radius: buttonRadius

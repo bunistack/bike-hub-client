@@ -5,6 +5,11 @@
 
 int main(int argc, char *argv[])
 {
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QCoreApplication::setOrganizationName("BikeHub");
+    QCoreApplication::setOrganizationDomain("bikehub.co");
+    QCoreApplication::setApplicationName("BikeHub");
+
     QApplication app(argc, argv);
     FelgoApplication felgo;
 
