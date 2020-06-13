@@ -25,6 +25,32 @@ FelgoPage {
 
         listModel: NavigationDrawerListModel{}
 
+        onMenuClicked: {
+
+            switch(index){
+            case 0:
+                navigationStackView.clearAndPush(Qt.resolvedUrl("./Home.qml"));
+                break;
+            case 1:
+                navigationStackView.clearAndPush(Qt.resolvedUrl("./Bookings.qml"));
+                break;
+            case 2:
+                navigationStackView.clearAndPush(Qt.resolvedUrl("./Shops.qml"));
+                break;
+            case 3:
+                navigationStackView.clearAndPush(Qt.resolvedUrl("./Blog.qml"));
+                break;
+            case 4:
+                navigationStackView.clearAndPush(Qt.resolvedUrl("./About.qml"));
+                break;
+            }
+
+            if(isPortrait || Theme.isAndroid){
+                navigationDrawer.close();
+            }
+
+        }
+
         //end of drawer
     }
 

@@ -37,5 +37,8 @@
         <file>qml/components/HomeItemCard.qml</file>
         <file>qml/models/HomeItemsModel.qml</file>
         <file>assets/images/icons/pastel/about_pastel.png</file>
+        <file>qml/pages/Bookings.qml</file>
+        <file>qml/pages/BookingsView.qml</file>
+        <file>assets/images/icons/menu_dotted_grey.png</file>
     </qresource>
 </RCC>
