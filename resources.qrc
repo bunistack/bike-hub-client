@@ -40,5 +40,23 @@
         <file>qml/pages/Bookings.qml</file>
         <file>qml/pages/BookingsView.qml</file>
         <file>assets/images/icons/menu_dotted_grey.png</file>
+        <file>qml/components/BookingsList.qml</file>
+        <file>qml/components/BookingsListCard.qml</file>
+        <file>qml/models/BookingsModel.qml</file>
+        <file>assets/images/icons/pastel/bicycle_pastel.png</file>
+        <file>assets/images/icons/pastel/motor_bike_pastel.png</file>
+        <file>assets/images/icons/pastel/barcode_pastel.png</file>
+        <file>assets/images/icons/pastel/medium/time_pastel.png</file>
+        <file>assets/images/icons/ticket_grey.png</file>
+        <file>qml/controls/ColoredImage.qml</file>
+        <file>qml/components/BookingInput.qml</file>
+        <file>qml/controls/ComboBoxStyle1.qml</file>
+        <file>qml/controls/MaterialButton.qml</file>
+        <file>qml/controls/TextFieldStyle1.qml</file>
+        <file>assets/images/icons/checkmark_grey.png</file>
+        <file>assets/images/icons/error_grey.png</file>
+        <file>assets/images/icons/store_grey.png</file>
+        <file>assets/images/icons/time_grey.png</file>
+        <file>assets/images/icons/trash_grey.png</file>
     </qresource>
 </RCC>

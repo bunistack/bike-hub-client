@@ -4,11 +4,10 @@ import AppUtil 1.0
 
 import "../controls"
 import "../components"
+import "../models"
 
 CustomPage {
     id: root
-
-    property int cols
 
     Column{
         anchors.fill: parent
@@ -17,95 +16,105 @@ CustomPage {
             id: header
             width: parent.width
             height: 50
-            contentRadius: 0
             z: 1
 
-            contentItem: Rectangle{
-                id: headerContainer
-                anchors.fill: parent
+            Row{
+                width: childrenRect.width
+                height: parent.height
+                spacing: 15
+                leftPadding: 15
 
-                Row{
-                    anchors.fill: parent
-                    spacing: 15
-                    leftPadding: 15
+                Image{
+                    width: 30
+                    height: 30
+                    visible: navigationDrawer.interactive
+                    anchors.verticalCenter: parent.verticalCenter
+                    source: "qrc:/assets/images/icons/hamburger_menu_grey.png"
 
-                    Image{
-                        width: 30
-                        height: 30
-                        visible: navigationDrawer.interactive
-                        anchors.verticalCenter: parent.verticalCenter
-                        source: "qrc:/assets/images/icons/hamburger_menu_grey.png"
-
-                        MouseArea{
-                            anchors.fill: parent
-                            hoverEnabled: true
-                            cursorShape: Qt.PointingHandCursor
-                            onClicked: navigationDrawer.open()
-                        }
-                    }
-
-                    Text {
-                        text: "Bookings"
-                        font.family: AppUtil.font1.name
-                        font.bold: true
-                        font.pixelSize: 16
-                        verticalAlignment: Text.AlignVCenter
-                        height: parent.height
+                    MouseArea{
+                        anchors.fill: parent
+                        hoverEnabled: true
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: navigationDrawer.open()
                     }
                 }
 
-                Row{
-                    width: childrenRect.width
+                Text {
+                    text: "Bookings"
+                    font.family: AppUtil.font1.name
+                    font.bold: true
+                    font.pixelSize: 16
+                    verticalAlignment: Text.AlignVCenter
                     height: parent.height
-                    spacing: 15
-                    anchors.margins: 10
-                    anchors.right: parent.right
+                }
+            }
 
-                    Image{
-                        width: 30
-                        height: 30
-                        anchors.verticalCenter: parent.verticalCenter
-                        source: "qrc:/assets/images/icons/menu_dotted_grey.png"
+            Row{
+                width: childrenRect.width
+                height: parent.height
+                spacing: 15
+                anchors.margins: 10
+                anchors.right: parent.right
 
-                        MouseArea{
-                            anchors.fill: parent
-                            hoverEnabled: true
-                            cursorShape: Qt.PointingHandCursor
-                            onClicked: menu.open()
-                        }
+                Image{
+                    width: 30
+                    height: 30
+                    anchors.verticalCenter: parent.verticalCenter
+                    source: "qrc:/assets/images/icons/menu_dotted_grey.png"
 
-                        CustomMenu {
-                            id: menu
-                            y: parent.y
-                            menuModel: ListModel {
-
-                            }
-
-                            onMenuItemClicked: {
-                                switch(index){
-                                case 0:
-
-                                    break;
-                                default:
-                                    break;
-                                }
-                            }
-                        }
-
-                        //end of menu button
+                    MouseArea{
+                        anchors.fill: parent
+                        hoverEnabled: true
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: menu.open()
                     }
 
+                    CustomMenu {
+                        id: menu
+                        y: parent.y
+                        menuModel: ListModel {
 
-                    //end of right side row
+                            ListElement{
+                                itemText: "Book"
+                                itemIcon: "qrc:/assets/images/icons/ticket_grey.png"
+                            }
+                        }
+
+                        onMenuItemClicked: {
+                            switch(index){
+                            case 0:
+                                bookingInput.run("book",-1);
+                                break;
+                            default:
+                                break;
+                            }
+                        }
+                    }
+
+                    //end of menu button
                 }
 
-                //end of container
+
+                //end of right side row
             }
 
             //end of header
         }
 
+        BookingsList{
+            width: parent.width
+            height: parent.height - header.height
+        }
+
         //end of Column
+    }
+
+    BookingsModel{
+        id: bookingsModel
+    }
+
+    BookingInput{
+        id: bookingInput
     }
 
     //end of root

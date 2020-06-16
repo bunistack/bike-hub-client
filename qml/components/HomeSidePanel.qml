@@ -62,89 +62,84 @@ Rectangle {
     ShadowedRectangle{
         width: parent.width - 10
         height: 400
-        contentRadius: 20
+        radius: 20
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
-        anchors.leftMargin: -contentRadius
-        dropShadow.verticalOffset: 2
-        dropShadow.horizontalOffset: 2
-        dropShadow.color: Qt.rgba(150/255,150/255,150/255,0.3)
+        anchors.leftMargin: -radius
+        verticalOffset: 2
+        horizontalOffset: 2
+        shadowColor: Qt.rgba(150/255,150/255,150/255,0.3)
         visible: isOpen
 
-        contentItem: Rectangle{
+        Column {
             anchors.fill: parent
-            anchors.leftMargin: 20
-            radius: 20
+            leftPadding: parent.radius + 10
+            topPadding: 10
+            spacing: 15
 
-            Column {
-                anchors.fill: parent
-                leftPadding: 10
-                topPadding: 10
-                spacing: 15
+            //user info
+            Row{
+                height: 80
+                width: parent.width
 
-                //user info
-                Row{
-                    height: 80
-                    width: parent.width
-
-                    RoundedImage{
-                        id: profile_pic
-                        width: parent.height
-                        height: parent.height
-                        source: SVG.profile_picture
-                    }
-
-                    Column{
-                        width: parent.width - profile_pic.width
-                        height: parent.height
-                        leftPadding: 20
-                        spacing: 5
-
-                        ListItemStyle1{
-                            width: parent.width
-                            height: 40
-                            label: "Active Since"
-                            text: "2019-09-20"
-                            iconSource: "qrc:/assets/images/icons/pastel/medium/calendar_pastel.png"
-                        }
-
-                        ListItemStyle1{
-                            width: parent.width
-                            height: 40
-                            label: "DOB"
-                            text: "2000-08-04"
-                            iconSource: "qrc:/assets/images/icons/pastel/medium/birthday_cake_pastel.png"
-                        }
-
-                        //end of column
-                    }
-
-                    //end of row
+                RoundedImage{
+                    id: profile_pic
+                    width: parent.height
+                    height: parent.height
+                    source: SVG.profile_picture
                 }
 
-                //quick info
                 Column{
-                    width: parent.width
-                    height: childrenRect.height
-                    spacing: 10
-                    topPadding: 20
+                    width: parent.width - profile_pic.width
+                    height: parent.height
+                    leftPadding: 20
+                    spacing: 5
 
-                    Repeater{
-                        model: quickItemsModel
+                    ListItemStyle1{
+                        width: parent.width
+                        height: 40
+                        label: "Active Since"
+                        text: "2019-09-20"
+                        iconSource: "qrc:/assets/images/icons/pastel/medium/calendar_pastel.png"
+                    }
 
-                        ListItemStyle2{
-                            width: 200
-                            height: 60
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            icon.source: iconSource
-                            iconSize: 40
-                            label.text: itemLabel
-                            text.text: itemText
-                        }
+                    ListItemStyle1{
+                        width: parent.width
+                        height: 40
+                        label: "DOB"
+                        text: "2000-08-04"
+                        iconSource: "qrc:/assets/images/icons/pastel/medium/birthday_cake_pastel.png"
+                    }
+
+                    //end of column
+                }
+
+                //end of row
+            }
+
+            //quick info
+            Column{
+                width: parent.width
+                height: childrenRect.height
+                spacing: 10
+                topPadding: 20
+
+                Repeater{
+                    model: quickItemsModel
+
+                    ListItemStyle2{
+                        width: 200
+                        height: 60
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        icon.source: iconSource
+                        iconSize: 40
+                        label.text: itemLabel
+                        text.text: itemText
                     }
                 }
             }
         }
+
     }
 
     ListModel{

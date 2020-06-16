@@ -17,45 +17,38 @@ CustomPage {
             id: header
             width: parent.width
             height: 50
-            contentRadius: 0
             z: 1
 
-            contentItem: Rectangle{
-                id: headerContainer
+            Row{
                 anchors.fill: parent
+                spacing: 15
+                leftPadding: 15
 
-                Row{
-                    anchors.fill: parent
-                    spacing: 15
-                    leftPadding: 15
+                Image{
+                    width: 30
+                    height: 30
+                    visible: navigationDrawer.interactive
+                    anchors.verticalCenter: parent.verticalCenter
+                    source: "qrc:/assets/images/icons/hamburger_menu_grey.png"
 
-                    Image{
-                        width: 30
-                        height: 30
-                        visible: navigationDrawer.interactive
-                        anchors.verticalCenter: parent.verticalCenter
-                        source: "qrc:/assets/images/icons/hamburger_menu_grey.png"
-
-                        MouseArea{
-                            anchors.fill: parent
-                            hoverEnabled: true
-                            cursorShape: Qt.PointingHandCursor
-                            onClicked: navigationDrawer.open()
-                        }
-                    }
-
-                    Text {
-                        text: "Home"
-                        font.family: AppUtil.font1.name
-                        font.bold: true
-                        font.pixelSize: 16
-                        verticalAlignment: Text.AlignVCenter
-                        height: parent.height
+                    MouseArea{
+                        anchors.fill: parent
+                        hoverEnabled: true
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: navigationDrawer.open()
                     }
                 }
 
-                //end of container
+                Text {
+                    text: "Home"
+                    font.family: AppUtil.font1.name
+                    font.bold: true
+                    font.pixelSize: 16
+                    verticalAlignment: Text.AlignVCenter
+                    height: parent.height
+                }
             }
+
 
             //end of header
         }       

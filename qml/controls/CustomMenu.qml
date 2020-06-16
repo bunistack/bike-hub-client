@@ -4,37 +4,17 @@ import AppUtil 1.0
 import QtGraphicalEffects 1.0
 
 Menu {
-    height: menuModel !== null ? 40 * menuModel.count + (2 * topPadding): 0
+    height: menuModel !== null ? 50 * menuModel.count : 0
     width: 200
 
     property ListModel menuModel
 
     signal menuItemClicked(int index)
 
-//    ListModel{
-//        id: menuModel
-
-//        ListElement{
-//            itemText: "Add Student"
-//            itemIcon: "qrc:/assets/images/icons/add-person.png"
-//        }
-
-//    }
-
-    topPadding: 10
-    bottomPadding: 10
-
     background: ShadowedRectangle{
+        id: shadowedRect
         anchors.fill: parent
-        contentItemMargins: 4
-        contentRadius: 4
-
-        contentItem: Rectangle{
-            id: shadowedRect
-            anchors.fill: parent
-            radius: 4
-            clip: true
-        }
+        radius: 4
     }
 
     Repeater{
@@ -42,7 +22,7 @@ Menu {
 
         MenuItem{
             id: menuItem
-            height: 40
+            height: 50
             width: shadowedRect.width
             anchors.horizontalCenter: parent.horizontalCenter
             hoverEnabled: true
