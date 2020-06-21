@@ -77,6 +77,11 @@ ShadowedRectangle {
         //end of Column
     }
 
+    MouseArea{
+        anchors.fill: parent
+        onClicked: bookingInput.run("update_booking",index);
+    }
+
     //end of header
 }
 

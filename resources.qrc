@@ -48,7 +48,6 @@
         <file>assets/images/icons/pastel/barcode_pastel.png</file>
         <file>assets/images/icons/pastel/medium/time_pastel.png</file>
         <file>assets/images/icons/ticket_grey.png</file>
-        <file>qml/controls/ColoredImage.qml</file>
         <file>qml/components/BookingInput.qml</file>
         <file>qml/controls/ComboBoxStyle1.qml</file>
         <file>qml/controls/MaterialButton.qml</file>

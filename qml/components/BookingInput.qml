@@ -74,6 +74,14 @@ Popup {
                 width: parent.height
                 height: parent.height
                 visible: inputAction === "update_booking"
+
+                MouseArea{
+                    anchors.fill: parent
+                    onClicked: {
+                        bookingsModel.remove(bookingIndex)
+                        root.close();
+                    }
+                }
             }
         }
 
@@ -105,7 +113,7 @@ Popup {
         MaterialButton{
             width: 150
             height: 40
-            text: "Book"
+            text: inputAction === "update_booking" ? "Update" : "Book"
             font.family: AppUtil.font1.name
             font.pixelSize: 16
             colorUp: "white"
@@ -118,11 +126,21 @@ Popup {
                     return;
                 }
 
-                bookingsModel.append({
-                                         "bike_type": bike_type_combo.currentText,
-                                         "appointment_time": time_edit.text,
-                                         "shop": shop_edit.text
-                                     });
+                if(inputAction === "book"){
+                    bookingsModel.append({
+                                             "bike_type": bike_type_combo.currentText,
+                                             "appointment_time": time_edit.text,
+                                             "shop": shop_edit.text
+                                         });
+                }else{
+                    bookingsModel.set(
+                                bookingIndex,
+                                {
+                                    "bike_type": bike_type_combo.currentText,
+                                    "appointment_time": time_edit.text,
+                                    "shop": shop_edit.text
+                                });
+                }
 
                 root.close();
             }
