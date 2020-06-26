@@ -146,7 +146,6 @@ Popup {
             }
         }
 
-
         //end of Column
     }
 

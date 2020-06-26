@@ -57,5 +57,22 @@
         <file>assets/images/icons/store_grey.png</file>
         <file>assets/images/icons/time_grey.png</file>
         <file>assets/images/icons/trash_grey.png</file>
+        <file>qml/pages/Shops.qml</file>
+        <file>qml/pages/ShopsView.qml</file>
+        <file>qml/models/ShopsModel.qml</file>
+        <file>qml/components/ShopsList.qml</file>
+        <file>qml/components/ShopListCard.qml</file>
+        <file>assets/images/wallpapers/shops/shop-1.jpg</file>
+        <file>assets/images/wallpapers/shops/shop-2.jpg</file>
+        <file>assets/images/wallpapers/shops/shop-3.jpg</file>
+        <file>assets/images/wallpapers/shops/shop-4.jpg</file>
+        <file>assets/images/icons/pastel/medium/city_pastel.png</file>
+        <file>qml/pages/Blog.qml</file>
+        <file>qml/pages/BlogView.qml</file>
+        <file>qml/models/BlogModel.qml</file>
+        <file>qml/components/BlogList.qml</file>
+        <file>qml/components/BlogListCard.qml</file>
+        <file>qml/pages/About.qml</file>
+        <file>qml/pages/AboutView.qml</file>
     </qresource>
 </RCC>
