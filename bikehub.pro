@@ -18,7 +18,9 @@ assetsFolder.source = assets
 RESOURCES += resources.qrc
 
 # The .cpp file which was generated for your project. Feel free to hack it.
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    api.cpp \
+    networkmanager.cpp
 
 
 android {
@@ -38,3 +40,7 @@ win32 {
 macx {
     ICON = macx/app_icon.icns
 }
+
+HEADERS += \
+    api.h \
+    networkmanager.h

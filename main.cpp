@@ -1,7 +1,10 @@
 #include <QApplication>
 #include <FelgoApplication>
-
+#include <QQmlContext>
 #include <QQmlApplicationEngine>
+
+#include "networkmanager.h"
+#include "api.h"
 
 int main(int argc, char *argv[])
 {
@@ -19,9 +22,19 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     felgo.initialize(&engine);
 
+    //network
+    NetworkManager *networkManager = new NetworkManager(&engine);
+
+    //api
+    API *api = new API(&engine,networkManager);
+
     //register singletons
     qmlRegisterSingletonType(QUrl("qrc:/qml/singletons/AppUtil.qml"), "AppUtil",1,0,"AppUtil");
     qmlRegisterSingletonType(QUrl("qrc:/qml/singletons/SVG.qml"), "SVG",1,0,"SVG");
+
+    //register context types
+    engine.rootContext()->setContextProperty("API",api);
+    engine.rootContext()->setContextProperty("NetworkManager",networkManager);
 
     felgo.setMainQmlFileName(QStringLiteral("qrc:/qml/Main.qml"));
 
