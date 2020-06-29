@@ -114,5 +114,37 @@ Popup {
         }
     }
 
+    function reportBugRequestReady(reply){
+
+        busy_indicator.close();
+
+        var result, response;
+
+        try{
+            response = JSON.parse(reply);
+            result = response.result;
+
+        }catch(err){
+            imageErrorDialog.run("Could not process server response",SVG.server_down,null);
+            return;
+        }finally{}
+
+        switch(result.status){
+        case "SUCCESS":
+            imageMessageDialog.run(result.message,SVG.success,root.close);
+            break;
+        case "FAILED":
+            imageErrorDialog.run(result.message,SVG.startled,null);
+            break;
+        case "NET_ERROR":
+            imageErrorDialog.run(result.message,SVG.startled,null);
+            break;
+        default:
+            break;
+        }
+
+
+    }
+
     //end of root
 }
