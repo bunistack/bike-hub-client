@@ -1,5 +1,6 @@
 import Felgo 3.0
 import QtQuick 2.0
+import SVG 1.0
 
 import "./controls"
 import "./components"
@@ -31,6 +32,21 @@ App {
 
     ImageErrorDialog{
         id: imageErrorDialog
+    }
+
+    PopupBusyIndicator{
+        id: busy_indicator
+        width: 200
+        x: (parent.width-width)/2
+        y: (parent.height-height)/2
+        modal: true
+
+        onTimeout: {
+            close();
+            var message;
+            message = "The operation took too long to complete. Also check your internet connection.";
+            imageErrorDialog.run(message,SVG.starled,null);
+        }
     }
 
 }

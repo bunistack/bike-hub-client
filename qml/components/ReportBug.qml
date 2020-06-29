@@ -22,6 +22,8 @@ Popup {
         resetInputs();
     }
 
+    property string report_bug_request: ""
+
     function resetInputs(){
         bug_description_edit.reset();
     }
@@ -75,11 +77,41 @@ Popup {
                     bug_description = bug_description_edit.text;
                 }
 
+                report_bug_request = AppUtil.generateRequestID();
+
+                busy_indicator.run("Reporting...");
+
+                let msg = {
+                    jsonrpc: "2.0",
+                    params: {
+                        method: "",
+                        args: {
+                            bug_description: bug_description
+                        }
+                    },
+                    id: report_bug_request
+                };
+
+                API.post(JSON.stringify(msg));
 
             }
         }
 
         //end of Column
+    }
+
+    Connections{
+        target: API
+
+        onReplyReady: {
+            switch(requestID){
+            case report_bug_request:
+                reportBugRequestReady(reply);
+                break;
+            default:
+                break;
+            }
+        }
     }
 
     //end of root
