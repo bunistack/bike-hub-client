@@ -115,7 +115,7 @@ CustomPage {
                     anchors.horizontalCenter: parent.horizontalCenter
 
                     onClicked: {
-
+                        reportBug.open();
                     }
                 }
 

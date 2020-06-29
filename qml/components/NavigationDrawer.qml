@@ -32,7 +32,7 @@ Drawer {
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
                 fillMode: Image.PreserveAspectCrop
-                source: "qrc:/assets/images/illustrations/biking.svg"
+                source: SVG.biking
             }
 
             Column {

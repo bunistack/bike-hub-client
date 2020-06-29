@@ -74,5 +74,11 @@
         <file>qml/components/BlogListCard.qml</file>
         <file>qml/pages/About.qml</file>
         <file>qml/pages/AboutView.qml</file>
+        <file>qml/controls/ImageErrorDialog.qml</file>
+        <file>qml/controls/ImageMessageDialog.qml</file>
+        <file>qml/components/ReportBug.qml</file>
+        <file>qml/controls/TextAreaStyle1.qml</file>
+        <file>assets/images/illustrations/startled.svg</file>
+        <file>assets/images/illustrations/success.svg</file>
     </qresource>
 </RCC>
