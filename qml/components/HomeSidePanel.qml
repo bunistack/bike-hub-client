@@ -15,7 +15,7 @@ Rectangle {
     //width animation
     Behavior on width{
         NumberAnimation{
-            duration: 300
+            duration: 150
             easing.type: Easing.InCurve
         }
     }
@@ -58,7 +58,6 @@ Rectangle {
 
     }
 
-
     ShadowedRectangle{
         width: parent.width - 10
         height: 400
@@ -69,7 +68,14 @@ Rectangle {
         verticalOffset: 2
         horizontalOffset: 2
         shadowColor: Qt.rgba(150/255,150/255,150/255,0.3)
-        visible: isOpen
+        opacity: isOpen ? 1 : 0
+
+        Behavior on opacity{
+            NumberAnimation{
+                duration: 150
+                easing.type: Easing.InCurve
+            }
+        }
 
         Column {
             anchors.fill: parent

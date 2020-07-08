@@ -1,6 +1,8 @@
 # allows to add DEPLOYMENTFOLDERS and links to the Felgo library and QtCreator auto-completion
 CONFIG += felgo
 
+QT += svg xml
+
 # Project identifier and version
 # More information: https://felgo.com/doc/felgo-publishing/#project-configuration
 PRODUCT_IDENTIFIER = com.bunistack.bikehub
@@ -26,6 +28,28 @@ SOURCES += main.cpp \
 android {
     ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
     OTHER_FILES += android/AndroidManifest.xml       android/build.gradle
+
+    equals(ANDROID_TARGET_ARCH,x86) {
+        #svg support
+        ANDROID_EXTRA_LIBS = \
+            C:/Felgo/Felgo/android_x86/lib/libQt5Svg.so \
+            C:/Felgo/Felgo/android_x86/lib/libQt5Xml.so
+    }
+
+    equals(ANDROID_TARGET_ARCH,armeabi-v7a) {
+        #svg support
+        ANDROID_EXTRA_LIBS = \
+            C:/Felgo/Felgo/android_armv7/lib/libQt5Svg.so \
+            C:/Felgo/Felgo/android_armv7/lib/libQt5Xml.so
+    }
+
+    equals(ANDROID_TARGET_ARCH, arm64-v8a)  {
+        #support for svg
+        ANDROID_EXTRA_LIBS = \
+            C:/Felgo/Felgo/android_arm64_v8a/lib/libQt5Svg.so \
+            C:/Felgo/Felgo/android_arm64_v8a/lib/libQt5Xml.so
+    }
+
 }
 
 ios {
