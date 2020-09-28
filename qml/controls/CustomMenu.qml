@@ -1,7 +1,6 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
 import AppUtil 1.0
-import QtGraphicalEffects 1.0
 
 Menu {
     height: menuModel !== null ? 50 * menuModel.count : 0

@@ -14,6 +14,9 @@ Rectangle {
         samples: 1+radius*2
         color: shadowColor
         transparentBorder: true
+        verticalOffset: root.verticalOffset
+        horizontalOffset: root.horizontalOffset
+        spread: root.spread
     }
 
     property bool shadowEnabled: true
